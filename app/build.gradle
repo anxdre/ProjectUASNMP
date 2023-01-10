@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.ubaya.projectuasnmp"
-        minSdk 21
-        targetSdk 32
+        minSdk 25
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -41,9 +41,18 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     //thirdparty
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.google.code.gson:gson:2.10'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation "com.wajahatkarim:easyvalidation-core:1.0.4"
+    implementation "com.airbnb.android:lottie:5.2.0"
+    implementation 'com.github.nabil6391:LottieSwipeRefreshLayout:1.0.0'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:datetime:3.3.0'
+    implementation 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    implementation 'com.afollestad.material-dialogs:lifecycle:3.3.0'
 
     //test
     testImplementation 'junit:junit:4.13.2'

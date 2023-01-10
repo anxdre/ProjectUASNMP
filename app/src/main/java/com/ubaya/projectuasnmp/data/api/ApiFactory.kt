@@ -4,7 +4,7 @@ import com.android.volley.Request.Method
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 
-object ApiFactory{
+object ApiFactory {
     fun getRequest(
         url: String,
         onSuccess: (String) -> Unit,
@@ -26,7 +26,7 @@ object ApiFactory{
             Method.POST, url,
             { onSuccess(it) },
             { onFailed(it) }) {
-            override fun getHeaders(): MutableMap<String, String> {
+            override fun getParams(): MutableMap<String, String>? {
                 return multipart
             }
         }

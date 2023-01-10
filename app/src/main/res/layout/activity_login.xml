@@ -34,6 +34,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputUsername"
+        style="@style/outlineTextBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -47,53 +48,61 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtUsername"
+            android:id="@+id/et_username_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputPass"
+        style="@style/outlineTextBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:hint="Password"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/textInputUsername"
         app:layout_constraintStart_toStartOf="@+id/textInputUsername"
-        app:layout_constraintTop_toBottomOf="@+id/textInputUsername">
+        app:layout_constraintTop_toBottomOf="@+id/textInputUsername"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPass"
+            android:id="@+id/et_password_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnCreateAcc"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="90dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="?colorSecondary"
         android:text="Create Account"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textInputPass"
-        app:layout_constraintStart_toStartOf="@+id/textInputPass"
-        app:layout_constraintTop_toBottomOf="@+id/textInputPass" />
+        app:layout_constraintStart_toStartOf="@+id/textInputPass" />
 
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginBottom="8dp"
         android:text="Sign In"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnCreateAcc"
-        app:layout_constraintStart_toStartOf="@+id/btnCreateAcc"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreateAcc" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateAcc"
+        app:layout_constraintEnd_toEndOf="@+id/textInputPass"
+        app:layout_constraintStart_toStartOf="@+id/textInputPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

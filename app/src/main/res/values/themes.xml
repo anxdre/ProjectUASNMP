@@ -2,15 +2,23 @@
     <!-- Base application theme. -->
     <style name="Theme.ProjectUASNMP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/black</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <style name="outlineTextBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#000</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintTextColor">@color/black</item>
     </style>
 </resources>

@@ -3,12 +3,11 @@ package com.ubaya.projectuasnmp.data.api.repositories
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.ubaya.projectuasnmp.data.api.ApiFactory
-import com.ubaya.projectuasnmp.data.model.Post
 
 class PostRepository {
     //get all user
     fun getAllPost(
-        idUser: Int, onSuccess: (String) -> Unit,
+        idUser: String, onSuccess: (String) -> Unit,
         onFailed: (VolleyError) -> Unit
     ): StringRequest {
         return ApiFactory.getRequest(
@@ -22,11 +21,11 @@ class PostRepository {
 
     //get post by user
     fun getByUser(
-        idUser: Int, onSuccess: (String) -> Unit,
+        idUser: String, onSuccess: (String) -> Unit,
         onFailed: (VolleyError) -> Unit
     ): StringRequest {
         return ApiFactory.getRequest(
-            url = "http://localhost/Memeku/api/posts/posts.php?userId=$idUser&mode=0",
+            url = "https://anxdre.my.id/Memeku/api/posts/posts.php?userId=$idUser&mode=0",
             onSuccess = {
                 onSuccess(it)
             }, onFailed = {
@@ -37,11 +36,11 @@ class PostRepository {
 
     //add like
     fun addLike(
-        idPost: Int, idUser: Int, onSuccess: (String) -> Unit,
+        idPost: String, idUser: String, onSuccess: (String) -> Unit,
         onFailed: (VolleyError) -> Unit
     ): StringRequest {
         return ApiFactory.postRequest(
-            url = "http://localhost/Memeku/api/posts/posts.php?userId=$idUser&mode=0",
+            url = "https://anxdre.my.id/Memeku/api/posts/posts.php",
             onSuccess = {
                 onSuccess(it)
             },
@@ -50,7 +49,7 @@ class PostRepository {
             },
             multipart = HashMap(
                 mutableMapOf(
-                    Pair("postId", "$idPost"),
+                    Pair("postId", idPost),
                     Pair("userId", "$idUser")
                 )
             )
@@ -58,11 +57,11 @@ class PostRepository {
     }
 
     fun addPost(
-        post: Post, onSuccess: (String) -> Unit,
+        post: Post.Data, onSuccess: (String) -> Unit,
         onFailed: (VolleyError) -> Unit
     ): StringRequest {
         return ApiFactory.postRequest(
-            url = "http://localhost/Memeku/api/posts/posts.php",
+            url = "https://anxdre.my.id/Memeku/api/posts/posts.php",
             onSuccess = {
                 onSuccess(it)
             },

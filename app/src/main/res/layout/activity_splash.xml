@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.splash.SplashActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_splash"
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_anim" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/bangers"
+        android:paddingHorizontal="12sp"
+        android:layout_below="@id/lav_splash"
+        android:text="DAILY MEME DIGEST"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/tv_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:paddingHorizontal="12sp"
+        android:layout_below="@id/tv_title"
+        android:text="Preparing"
+        android:textColor="@color/material_on_background_disabled"
+        />
+
+</RelativeLayout>
