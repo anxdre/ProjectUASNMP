@@ -9,7 +9,6 @@ import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.android.volley.toolbox.Volley
 import com.ubaya.projectuasnmp.R
 import com.ubaya.projectuasnmp.data.SharedPrefHelper
-import com.ubaya.projectuasnmp.util.fetchImageFromNetwork
 import com.ubaya.projectuasnmp.view.auth.login.LoginActivity
 import com.ubaya.projectuasnmp.view.home.home.HomeViewPageAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -82,6 +81,14 @@ class MainActivity : FragmentActivity() {
 
     fun changePagePosition(menuId: Int) {
         bn_main.selectedItemId = menuId
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val afterCreate = intent.getBooleanExtra("createMeme", false)
+        if (afterCreate) {
+            changePagePosition(R.id.itemMyCreation)
+        }
     }
 
 

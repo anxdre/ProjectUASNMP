@@ -51,6 +51,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun fetchUserData() {
+        val loading = showLoadingUi(this)
+        loading.show()
         val user = User.Data(
             "",
             null,
@@ -64,11 +66,13 @@ class RegisterActivity : AppCompatActivity() {
         volley.add(AuthRepository().register(
             user = user,
             onSuccess = {
+                loading.dismiss()
                 val result = Gson().fromJson(it, User::class.java)
                 showSortToast(applicationContext, "${result.msg} login to use the App")
                 finish()
             },
             onFailed = {
+                loading.dismiss()
                 Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
             }
         )
